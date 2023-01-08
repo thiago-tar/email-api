@@ -12,8 +12,10 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # loads nvm bash_completion (node is in path now)
 
 cd /home/ec2-user/deploy/api/email-api
+echo "NPM INSTALL"
 #install node modules
 npm install
-
+echo "NPM START"
 #start our node app in the background
 npm start
+echo "Finish"
