@@ -1,7 +1,7 @@
 version: 0.0
 os: linux
 files:
-  - sorce: /
+  - source: /
     destination: /home/ec2-user/apis/git-deploy/email-api
 hooks:
   ApplicationStop:
