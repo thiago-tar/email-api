@@ -1,0 +1,16 @@
+[Unit]
+Description=EmailApi
+After=multi-user.target
+
+[Service]
+ExecStart=/usr/bin/node /home/ec2-user/deploy/api/email-api/server.js
+Restart=always
+RestartSec=10
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=EmailApi
+User=ec2-user
+EnvironmentFile=/home/ec2-user/deploy/api/email-api/app.env
+
+[Install]
+WantedBy=multi-user.target

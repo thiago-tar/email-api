@@ -11,10 +11,14 @@ cd /home/ec2-user/deploy/api/email-api
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # loads nvm	
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # loads nvm bash_completion (node is in path now)
 
+sudo mv /home/ec2-user/deploy/api/email-api/scripts/EmailApi.service /etc/systemd/system/EmailApi.service
+
 echo "NPM INSTALL"
 #install node modules
 npm install
-echo "NPM START"
+# echo "NPM START"
 #start our node app in the background
-node ./src/server.js > app.out.log 2> app.err.log < /dev/null & 
+# node ./src/server.js > app.out.log 2> app.err.log < /dev/null & 
+sudo systemctl enable EmailApi.service
+sudo systemctl start EmailApi.service
 echo "Finish"
