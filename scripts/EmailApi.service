@@ -3,7 +3,7 @@ Description=EmailApi
 After=multi-user.target
 
 [Service]
-ExecStart=/usr/bin/node /home/ec2-user/deploy/api/email-api/server.js
+ExecStart=/usr/bin/node /home/ec2-user/deploy/api/email-api/src/server.js
 Restart=always
 RestartSec=10
 StandardOutput=syslog
